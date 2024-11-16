@@ -1,0 +1,1 @@
+**Future:** Will add instructions on how to setup your own sql server using docker.
