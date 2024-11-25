@@ -35,7 +35,7 @@ ceil()
 
 *Misc*
 
-You can use UNION ALL to initialize and update a table, 
+1. You can use UNION ALL to initialize and update a table, 
 Sample:
 
 -- Initialize a table with inital price of products as 10
@@ -68,3 +68,9 @@ where
             product_id
     )
 
+2. Some countries have populations more than three times that of all of their neighbours (in the same continent). Give the countries and continents.
+[name	continent	area	population	gdp]
+
+select w1.name, w1.continent
+from world w1
+where population > ALL (select 3*population from world w2 where w1.name <> w2.name and w1.continent = w2.continent)
