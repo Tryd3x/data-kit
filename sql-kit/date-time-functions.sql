@@ -81,6 +81,13 @@ SELECT ADDDATE('2017-01-13', '2017-01-03');
 -- Add two time
 SELECT ADDTIME('10:40:32.88558', '06:04:01.222222');
 
+-- Date format
+-- Lookup link below for format 
+-- https://www.w3schools.com/sql/func_mysql_date_format.asp
+-- returns string
+SELECT DATE_FORMAT('column','format')
+SELECT DATE_FORMAT('1996-09-26 16:44:15.581', '%Y-')
+
 WITH
     student_subject_pair AS (
         SELECT DISTINCT
