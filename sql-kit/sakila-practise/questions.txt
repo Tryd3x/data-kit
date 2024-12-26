@@ -1,0 +1,78 @@
+6. Employees with Sales Above Average
+Problem: Find employees whose total sales exceed 110% of the average total sales across all employees.
+
+Constraints:
+
+Include their employee_id, name, and total_sales.
+Order the results by total_sales in descending order.
+Expected Output:
+
+employee_id	name	total_sales
+1	John Doe	6000.00
+3	Alice Johnson	5800.00
+
+======================================================================================================================================
+======================================================================================================================================
+
+7. Customer Retention Rates
+Problem: Calculate the retention rate for each month in the past year. Retention rate = (Number of customers with a rental this month who also rented last month) / (Number of customers who rented last month).
+
+Constraints:
+
+Output columns: month, year, retention_rate (percentage with 2 decimal places).
+Only include months where at least 10 customers rented.
+Expected Output:
+
+month	year	retention_rate
+12	2023	80.50%
+11	2023	75.25%
+10	2023	82.00%
+
+======================================================================================================================================
+======================================================================================================================================
+
+8. Anomalous Revenue Days
+Problem: Identify days where the total revenue was at least 30% higher or lower than the average daily revenue for the past year.
+
+Constraints:
+
+Output columns: date, total_revenue, difference_from_avg (positive/negative).
+Order by difference_from_avg in descending order.
+Expected Output:
+
+date	total_revenue	difference_from_avg
+2023-12-15	1500.00	+500.00
+2023-11-22	500.00	-500.00
+
+======================================================================================================================================
+======================================================================================================================================
+
+9. Peak Rental Days
+Problem: Find the day of the week with the highest total rentals.
+
+Constraints:
+
+Output columns: day_of_week, total_rentals.
+If two days have the same rentals, rank them alphabetically.
+Expected Output:
+
+day_of_week	total_rentals
+Saturday	500
+Friday	450
+
+======================================================================================================================================
+======================================================================================================================================
+
+10. Movie Pair Rentals
+Problem: Determine the top 3 most frequently rented pairs of movies.
+
+Constraints:
+
+Consider only pairs rented by the same customer on the same day.
+Output columns: movie_1, movie_2, rental_count.
+Order by rental_count in descending order.
+Expected Output:
+
+movie_1	movie_2	rental_count
+The Matrix	Inception	50
+Avengers	Iron Man	45
