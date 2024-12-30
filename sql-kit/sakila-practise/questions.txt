@@ -1,48 +1,4 @@
-7. High Spending Customers (Hard)
-Problem:
-Find customers who spent more than $1,000 in total in the past year. Include customer_id, name, and total_spent.
-
-Constraints:
-
-Use the following schema:
-
-customer, payment.
-Combine first_name and last_name as name.
-
-Only include payments made in the past year.
-
-Sort results by total_spent in descending order.
-
-Output:
-
-customer_id	name	total_spent
-101	Alice Johnson	1500.00
-
-======================================================================================================================================
-======================================================================================================================================
-
-8. Frequent Customer Pairs (Hard)
-Problem:
-Identify the top 3 customer pairs who rented movies on the same day most frequently. Include customer_1, customer_2, and total_shared_rentals.
-
-Constraints:
-
-Use the following schema:
-
-rental.
-Only include customer pairs who rented movies on the same day at least once.
-
-Sort by total_shared_rentals in descending order.
-
-Output:
-
-customer_1	customer_2	total_shared_rentals
-John Doe	Alice Johnson	5
-
-======================================================================================================================================
-======================================================================================================================================
-
-9. High-Performing Genres (Hard)
+19. High-Performing Genres (Hard)
 Problem:
 List genres that generated at least $10,000 in revenue in the past year. Include genre and total_revenue.
 
@@ -63,7 +19,7 @@ Action	15000.00
 ======================================================================================================================================
 ======================================================================================================================================
 
-10. Late Returns (Hard)
+20. Late Returns (Hard)
 Problem:
 Find customers who returned movies more than 7 days after the rental date. Include customer_id, name, film_id, title, and days_late.
 
