@@ -1,38 +1,85 @@
-19. High-Performing Genres (Hard)
+Problem 21: Top Revenue Generating Movies by Location (Hard)
 Problem:
-List genres that generated at least $10,000 in revenue in the past year. Include genre and total_revenue.
+Identify the top 5 revenue-generating movies for each store location in the past year. Include store_id, film_id, title, and total_revenue.
 
 Constraints:
 
-Use the following schema:
-
-payment, rental, film_category, category.
-Only include genres with total revenue above $10,000.
-
-Sort by total_revenue in descending order.
-
+Use the following schema: store, rental, payment, inventory, film.
+Only include revenue from the past 12 months.
+Rank movies by total_revenue within each store.
+Sort by store_id and total_revenue in descending order.
 Output:
 
-genre	total_revenue
-Action	15000.00
+store_id	film_id	title	total_revenue
+1	101	Avengers	2000.00
+1	202	Inception	1800.00
 
 ======================================================================================================================================
 ======================================================================================================================================
 
-20. Late Returns (Hard)
+Problem 22: Customer Retention Analysis by Age Group (Hard)
 Problem:
-Find customers who returned movies more than 7 days after the rental date. Include customer_id, name, film_id, title, and days_late.
+Calculate the retention rate for each age group. Retention rate = (Customers who rented in the current year and previous year) / Customers who rented in the previous year. Include age_group, year, and retention_rate.
 
 Constraints:
 
-Use the following schema:
-
-rental, customer, film.
-Calculate days_late as the difference between return_date and rental_date.
-
-Only include customers with days_late > 7.xit
-
+Use the following schema: customer, rental.
+Group customers into age buckets: 18-25, 26-35, 36-50, and 50+.
+Only consider rentals from the past 2 years.
 Output:
 
-customer_id	name	film_id	title	days_late
-101	Alice Johnson	22	Inception	10
+age_group	year	retention_rate
+18-25	2023	75.50%
+26-35	2023	60.00%
+
+======================================================================================================================================
+======================================================================================================================================
+
+Problem 23: Peak Sales Day Analysis (Hard)
+Problem:
+Identify the day of the week with the highest total revenue for each month in the past year. Include month, day_of_week, and total_revenue.
+
+Constraints:
+
+Use the following schema: payment, rental.
+Only include data from the past 12 months.
+Output:
+
+month	day_of_week	total_revenue
+January	Saturday	5000.00
+February	Friday	4800.00
+
+======================================================================================================================================
+======================================================================================================================================
+
+Problem 24: Genre Pair Analysis (Hard)
+Problem:
+Find the top 3 most frequently rented genre pairs. Include genre_1, genre_2, and pair_count.
+
+Constraints:
+
+Use the following schema: rental, film_category, category.
+Only consider pairs rented by the same customer on the same day.
+Sort by pair_count in descending order.
+Output:
+
+genre_1	genre_2	pair_count
+Action	Comedy	50
+Drama	Thriller	45
+
+======================================================================================================================================
+======================================================================================================================================
+
+Problem 25: Average Rental Duration by Genre (Hard)
+Problem:
+Calculate the average rental duration for each genre. Include genre and avg_rental_duration.
+
+Constraints:
+
+Use the following schema: rental, inventory, film_category, category.
+Rental duration = DATEDIFF(return_date, rental_date).
+Output:
+
+genre	avg_rental_duration
+Action	5.50
+Comedy	6.25
