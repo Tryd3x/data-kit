@@ -15,3 +15,4 @@ with recursive -- Declares CTE as recursive
   )
   select i, con_num -- Choose which variables to display
   from consec_num
+  -- where i = 3 -- This helps choose the index of the recursive table
