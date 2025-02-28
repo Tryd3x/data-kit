@@ -6,7 +6,7 @@
 # VARIABLES
 # Uppercase by convention
 # Letters, numbers, underscores
-NAME="Bob"
+# NAME="Bob"
 # echo "My name is $NAME"
 # echo "My name is ${NAME}"
 
@@ -71,12 +71,13 @@ NAME="Bob"
 # -d file   True if the file is a directory
 # -e file   True if the file exists (note that this is not particularly portable, thus -f is generally used)
 # -f file   True if the provided string is a file
-# -g file   True if the group id is set on a file
 # -r file   True if the file is readable
 # -s file   True if the file has a non-zero size
-# -u    True if the user id is set on a file
 # -w    True if the file is writable
 # -x    True if the file is an executable
+
+# -u    True if the user id is set on a file
+# -g file   True if the group id is set on a file
 ########
 
 #CASE STATEMENT
