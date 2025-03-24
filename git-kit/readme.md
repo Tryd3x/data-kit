@@ -21,8 +21,8 @@
 
 
 ## Types of merge
-
-- Fast-Forward merge
+ 
+- Fast-Forward merge  
 ✅ Pros: Simple, no extra merge commit.  
 ❌ Cons: Doesn't show a clear feature branch merge.
 ``` 
@@ -38,26 +38,7 @@ A---B---C  (main)
 After Fast-Forward Merge:  
 A---B---C---D---E  (main, feature)
 ```
-- Three-Way Merge (Default)
-✅ Pros: Retains full history of both branches.  
-❌ Cons: Creates an extra merge commit (M).
-```
-git checkout main
-git merge feature-branch
-
-```
-```
-Before:  
-A---B---C  (main)  
- \     
-  D---E---F  (feature)  
-
-After Merge:
-A---B---C---M  (main)
- \         /
-  D---E---F  (feature)
-```
-- Rebase (History Rewrite for a Clean Linear History) 
+- Rebase (History Rewrite for a Clean Linear History)   
 ✅ Pros: Linear, clean commit history.  
 ❌ Cons: Rewrites history, potential conflicts.
 ```
@@ -78,3 +59,46 @@ A---B---C  (main)
 After Rebase:
 A---B---C---D'---E'---F'  (feature)
 ```
+
+- Three-Way Merge (Default)  
+✅ Pros: Retains full history of both branches.  
+❌ Cons: Creates an extra merge commit (M).
+```
+git checkout main
+git merge feature-branch
+```
+```
+Before:  
+A---B---C  (main)  
+ \     
+  D---E---F  (feature)  
+
+After Merge:
+A---B---C---M  (main)
+ \         /
+  D---E---F  (feature)
+```
+
+- Squash  
+✅ Pros: Cleans up history by combining multiple commits into one.  
+❌ Cons: Loses the individual commit history from the feature branch.  
+```
+git checkout main
+git merge --squash feature-branch
+git commit
+```
+```
+Before:  
+A---B---C  (main)  
+ \     
+  D---E---F  (feature) === squashed into ==> G  
+
+After Squash Merge:  
+A---B---C---G  (main)
+            (squashed commit)  
+```
+
+
+Differences between fast-forward and rebase:
+- [Fast-forward]:   Main hasnt been updated since feature branch off
+- [Rebase]:         Main has been updated since feature branch off
