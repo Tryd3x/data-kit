@@ -39,7 +39,7 @@ else
   echo "Your name is NOT Brad or Jack"
 fi
 
-# COMPARISON
+# STRING COMPARISON []
 NUM1=31
 NUM2=5
 if [ "$NUM1" -gt "$NUM2" ]
@@ -49,7 +49,7 @@ else
   echo "$NUM1 is less than $NUM2"
 fi
 
-########
+######## For string comparisons only
 # val1 -eq val2 Returns true if the values are equal
 # val1 -ne val2 Returns true if the values are not equal
 # val1 -gt val2 Returns true if val1 is greater than val2
@@ -57,6 +57,12 @@ fi
 # val1 -lt val2 Returns true if val1 is less than val2
 # val1 -le val2 Returns true if val1 is less than or equal to val2
 ########
+
+# Numerical Comparisons (())
+# you can use >, <, <=, >= , !=
+if (( NUM1 > NUM2 )); then
+    echo "x is greater than y"
+fi
 
 # FILE CONDITIONS
 FILE="test.txt"
@@ -140,3 +146,20 @@ mkdir hello
 touch "hello/world.txt"
 echo "Hello World" >> "hello/world.txt"
 echo "Created hello/world.txt"
+
+
+# [] vs (()) 
+# String comparison []
+# Cannot use >, <, <=, >= , !=
+# Use -gt, -lt, -le, -ge, -ne
+if [ "$str1" = "$str2" ]; then
+    echo "Equal"
+fi
+
+# Numerical Comparisons (())
+# you can use >, <, <=, >= , !=
+x=5
+y=3
+if (( x > y )); then
+    echo "x is greater than y"
+fi
